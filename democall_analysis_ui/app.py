@@ -1,10 +1,15 @@
 from __future__ import annotations
 
 import os
+import sys
 import time
 from typing import Optional
 
 import streamlit as st
+
+_REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+if _REPO_ROOT not in sys.path:
+    sys.path.insert(0, _REPO_ROOT)
 
 from democall_analysis_ui.io_utils import json_pretty, sha256_bytes, sha256_text
 from democall_analysis_ui.pipeline import CallAuditPipeline, AnalysisResult
