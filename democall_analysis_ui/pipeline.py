@@ -78,7 +78,7 @@ class CallAuditPipeline:
         client: genai.Client,
         audio_bytes: Optional[bytes],
         audio_filename: Optional[str],
-        pasted_transcript: Optional[str],
+        pasted_transcript: Optional[str]=None,
         force_sample_transcript: Optional[str] = None,
     ) -> AnalysisResult:
         started = time.perf_counter()
