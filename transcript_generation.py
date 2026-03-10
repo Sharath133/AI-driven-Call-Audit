@@ -280,7 +280,7 @@ def generate_transcript_with_gemini(filepath: str) -> Optional[str]:
         uploaded_file = genai.upload_file(filepath)
 
         # Generate transcript using Gemini Flash (faster and cheaper for transcription)
-        model = genai.GenerativeModel("models/gemini-2.5-flash")
+        model = genai.GenerativeModel("models/gemini-1.5-flash")
         response = model.generate_content([transcript_prompt, uploaded_file])
 
         transcript_text = response.text.strip()

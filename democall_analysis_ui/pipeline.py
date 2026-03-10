@@ -60,8 +60,16 @@ class CallAuditPipeline:
 
     @staticmethod
     def get_models() -> tuple[str, str]:
-        transcribe_model = os.environ.get("GEMINI_TRANSCRIBE_MODEL", "gemini-2.0-flash")
-        audit_model = os.environ.get("GEMINI_AUDIT_MODEL", "gemini-2.5-pro")
+        # Defaults chosen to be widely available across Gemini API versions.
+        # You can override these via GEMINI_TRANSCRIBE_MODEL / GEMINI_AUDIT_MODEL in .env.
+        transcribe_model = os.environ.get(
+            "GEMINI_TRANSCRIBE_MODEL",
+            "models/gemini-1.0-pro",
+        )
+        audit_model = os.environ.get(
+            "GEMINI_AUDIT_MODEL",
+            "models/gemini-1.0-pro",
+        )
         return transcribe_model, audit_model
 
     @staticmethod

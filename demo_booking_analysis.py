@@ -179,7 +179,7 @@ def process_audio_file(filepath: str, call_info: Dict[str, str]):
         )
         file = genai_client.files.upload(file=filepath)
         response = genai_client.models.generate_content(
-            model="gemini-2.5-pro",
+            model="gemini-1.5-flash",
             contents=[prompt, file],
             config={
                 "response_mime_type": "application/json",
