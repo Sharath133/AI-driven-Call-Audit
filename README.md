@@ -10,7 +10,7 @@ analyze call transcripts and generate structured insights.
 
 #Workflow / Architecture
 
-Explain the flow:
+Flow:
 1. Recording input
 2. The LLM audits the call and pushes the insights
 3. Transcript generation by LLM if call is less than 2 min
